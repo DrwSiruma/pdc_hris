@@ -3,7 +3,7 @@ include('admin.header.php');
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
-    $query = $conn->prepare("SELECT * FROM tbl_useraccounts WHERE id = ?");
+    $query = $conn->prepare("SELECT * FROM hr_useraccounts WHERE id = ?");
     $query->bind_param("i", $id);
     $query->execute();
     $result = $query->get_result();

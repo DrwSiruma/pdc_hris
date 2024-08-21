@@ -27,7 +27,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $user_qry = mysqli_query($conn, "SELECT * FROM tbl_useraccounts WHERE id != '1'");
+                                    $user_qry = mysqli_query($conn, "SELECT * FROM hr_useraccounts WHERE id != '1'");
                                     while($rows=mysqli_fetch_array($user_qry)){ 
                                 ?>
                                     <tr>

@@ -7,9 +7,8 @@
                     <div class="logo text-center mb-2">
                         <img src="../img/PDC-Logo.png" alt="Logo">
                     </div>
-                    <div class="text-center mb-3">
-                        <h5>IT & Maintenance Support</h5>
-                    </div>
+
+                    <hr />
                     
                     <?php if (!empty($error)) : ?>
                         <div class="alert alert-danger"><?php echo $error; ?></div>

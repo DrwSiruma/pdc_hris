@@ -17,9 +17,6 @@ unset($_SESSION['success']);
 // Get the current script name
 $current_page = basename($_SERVER['PHP_SELF']);
 $accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
-$outlet_page = ['admin.outlet.php', 'admin.add.outlet.php', 'admin.edit.outlet.php'];
-$product_page = ['admin.products.php', 'admin.add.product.php', 'admin.edit.product.php'];
-$pcategory_page = ['admin.product.category.php', 'admin.add.pcategory.php', 'admin.edit.pcategory.php']
 
 ?>
 
@@ -46,67 +43,57 @@ $pcategory_page = ['admin.product.category.php', 'admin.add.pcategory.php', 'adm
         <link href="../../assets/css/main.style.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand d-flex align-items-center" href="admin.dashboard.php">
-                    <img src="../../img/PDC-logo-transparent.png" alt="PDC logo" height="40">
-                </a>
-                <!-- Navbar toggler for mobile view -->
+        <!-- Brand Name Section -->
+        <div class="brand-name">
+            Panda Development Corp. - HRIS
+        </div>
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Navbar links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link <?php echo ($current_page == 'admin.dashboard.php') ? 'active' : ''; ?>" href="admin.dashboard.php">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle <?php echo (in_array($current_page, $accounts_page)) ? 'active' : ''; ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Users
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item <?php echo ($current_page == 'admin.add.user.php') ? 'active' : ''; ?>" href="admin.add.user.php">Add New User</a></li>
-                                <li><a class="dropdown-item <?php echo ($current_page == 'admin.accounts.php') ? 'active' : ''; ?>" href="admin.accounts.php">User Management</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Inventory
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Add New Item</a></li>
-                                <li><a class="dropdown-item" href="#">Item List</a></li>
-                                <li><a class="dropdown-item" href="#">Item Management</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Manpower
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="#">IT List</a></li>
-                                <li><a class="dropdown-item" href="#">Maintenance List</a></li>
-                                <li><a class="dropdown-item" href="#">Add New Manpower</a></li>
-                                <li><a class="dropdown-item" href="#">Manpower Management</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <li><a class="dropdown-item" href="#">Consulting</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#">Development</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Web Development</a></li>
+                                        <li><a class="dropdown-item" href="#">Mobile Development</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Support</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reports
+                                About
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="#">IT Reports</a></li>
-                                <li><a class="dropdown-item" href="#">Maintenance Reports</a></li>
+                                <li><a class="dropdown-item" href="#">Company</a></li>
+                                <li><a class="dropdown-item" href="#">Team</a></li>
+                                <li><a class="dropdown-item" href="#">Careers</a></li>
                             </ul>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" style="color: #FFD700;" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i>&nbsp;Admin</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-gear"></i>&nbsp;Settings</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="../../includes/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a></li>
+                            <a class="nav-link dropdown-toggle account" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
                             </ul>
                         </li>
                     </ul>

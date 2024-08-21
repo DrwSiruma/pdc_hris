@@ -26,10 +26,10 @@
                             <select class="form-control" id="role" name="role" onchange="toggleBranchSelection()" required>
                                 <option value="" hidden>Select Role</option>
                                 <option value="admin">Admin</option>
-                                <option value="it">IT</option>
-                                <option value="maintenance">Maintenance</option>
-                                <option value="office">Office</option>
-                                <option value="outlet">Outlet</option>
+                                <option value="payroll">Payroll</option>
+                                <option value="accounting">Accounting</option>
+                                <option value="supervisor">Supervisor</option>
+                                <option value="employee">Employee</option>
                             </select>
                         </div>
                         <button type="submit" class="btn w-100 btn-warning btn-block">Register</button>

@@ -3,7 +3,7 @@ include('../includes/connection.php');
 session_start();
 
 function log_activity($conn, $user_id, $activity, $type) {
-    $sql = "INSERT INTO tbl_auditlog (user_id, activity, type, date_posted) VALUES (?, ?, ?, NOW(6))";
+    $sql = "INSERT INTO hr_auditlog (user_id, activity, type, date_posted) VALUES (?, ?, ?, NOW(6))";
     $stmt = $conn->prepare($sql);
     if ($stmt) {
         $stmt->bind_param("iss", $user_id, $activity, $type);
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: login.php");
         exit();
     } else {
-        $sql = "SELECT * FROM tbl_useraccounts WHERE username = ?";
+        $sql = "SELECT * FROM hr_useraccounts WHERE username = ?";
         $stmt = $conn->prepare($sql);
         if ($stmt) {
             $stmt->bind_param("s", $username);
