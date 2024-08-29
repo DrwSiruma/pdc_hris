@@ -3,7 +3,7 @@ session_start();
 include('../../includes/connection.php');
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -45,7 +45,8 @@ $accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
     <body>
         <!-- Brand Name Section -->
         <div class="brand-name">
-            Panda Development Corp. - HRIS
+            <h3>Panda Development Corporation</h3>
+            <span>Human Resources Management System</span>
         </div>
         <!-- Navbar Section -->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -56,22 +57,36 @@ $accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="admin.dashboard.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
+                                Admin
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <li><a class="dropdown-item" href="#">Consulting</a></li>
                                 <li class="dropdown-submenu">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Development</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Web Development</a></li>
-                                        <li><a class="dropdown-item" href="#">Mobile Development</a></li>
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="submenuDropdown1">DTR Management</a>
+                                    <ul class="dropdown-menu" aria-labelledby="submenuDropdown1">
+                                        <li><a class="dropdown-item" href="#">Define Holiday</a></li>
+                                        <li><a class="dropdown-item" href="#">Shift Timetable</a></li>
+                                        <li><a class="dropdown-item" href="#">Shift Management</a></li>
+                                        <li><a class="dropdown-item" href="#">Company Default Work Schedule</a></li>
+                                        <li><a class="dropdown-item" href="#">Default Work Schedule By Department</a></li>
+                                        <li><a class="dropdown-item" href="#">Default Work Schedule By Employee</a></li>
+                                        <li><a class="dropdown-item" href="#">Cause of Tardiness</a></li>
+                                        <li><a class="dropdown-item" href="#">Biometric Device List</a></li>
+                                        <li><a class="dropdown-item" href="#">Period Cut-off</a></li>
+                                        <li><a class="dropdown-item" href="#">Add/Update Work Areas</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="submenuDropdown1">Audit Trail</a>
+                                    <ul class="dropdown-menu" aria-labelledby="submenuDropdown1">
+                                        <li><a class="dropdown-item" href="#">System Login</a></li>
+                                        <li><a class="dropdown-item" href="#">Approval Trail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Company Info</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

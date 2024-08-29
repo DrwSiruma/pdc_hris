@@ -10,4 +10,5 @@
     <!-- MAIN JS -->
     <script src="../../assets/js/table.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/nav.js"></script>
 </html>

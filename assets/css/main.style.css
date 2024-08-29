@@ -7,7 +7,15 @@ body {
 .brand-name {
   text-align: left;
   padding: 10px 20px;
+  width: 100%;
+}
+.brand-name h3 {
   font-size: 24px;
+  font-weight: 600;
+  margin: 0%;
+}
+.brand-name span {
+  font-size: 1rem;
 }
 
 /* Navbar styling */
@@ -57,13 +65,17 @@ body {
 }
 
 .navbar-toggler-icon {
-  background-color: rgba(255, 255, 255, .55);
+  /* background-color: rgba(255, 255, 255, .55); */
 }
 
 /* Hover dropdowns for larger screens */
 @media (min-width: 992px) {
-  .navbar-nav .dropdown:hover .dropdown-menu {
+  .navbar-nav .dropdown:hover > .dropdown-menu {
       display: block;
+  }
+
+  .dropdown-menu .dropdown-menu {
+      display: none;
   }
 
   .dropdown-submenu:hover > .dropdown-menu {
