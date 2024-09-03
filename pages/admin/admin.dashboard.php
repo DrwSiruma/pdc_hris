@@ -2,7 +2,7 @@
 
     <main id="main">
         <div class="container">
-            <h2 class="mt-4">Dashboard</h2><hr />
+            <h2 class="heading-main mt-4">Dashboard</h2><hr />
 
             
         </div>

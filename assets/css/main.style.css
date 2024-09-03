@@ -41,6 +41,11 @@ body {
   color: rgba(255, 255, 255, .55);
 }
 
+.dropdown-item.active {
+  background-color: transparent !important;
+  color: white !important;
+}
+
 .navbar-nav .dropdown-item:hover {
   color: white;
   background-color: transparent;
@@ -58,15 +63,16 @@ body {
 
 .navbar-nav .nav-link.account {
   color: gold;
+  margin-right: 30px;
 }
 
 .navbar-toggler {
   border-color: rgba(255, 255, 255, .55);
 }
 
-.navbar-toggler-icon {
+/* .navbar-toggler-icon {
   background-color: rgba(255, 255, 255, .55);
-}
+} */
 
 /* Hover dropdowns for larger screens */
 @media (min-width: 992px) {
@@ -80,5 +86,175 @@ body {
 
   .dropdown-submenu:hover > .dropdown-menu {
       display: block;
+  }
+}
+
+.heading-main {
+  font-size: 24px;
+}
+
+.indentmenu {
+  font: bold 13px Arial;
+  width: 100%;
+}
+
+.indentmenu ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  border-top: 1px solid darkred;
+  background: black url(indentbg.gif) center center repeat-x;
+}
+
+.indentmenu ul li {
+  display: inline;
+}
+
+.indentmenu ul li a {
+  float: left;
+  color: black;
+  padding: 3px 11px;
+  text-decoration: none;
+  border-right: 1px solid darkred;
+}
+
+.indentmenu ul li a.selected {
+  color: black !important;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  background: black url(indentbg2.gif) center center repeat-x;
+}
+
+nav#menu-overflow {
+  background: #fff;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+nav#menu-overflow ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  clear: both;
+  list-style: none;
+}
+
+nav#menu-overflow ul li {
+  float: left;
+  list-style: none;
+  width: 8%;
+  text-align: center;
+  font: 700 12px Lato, Arial;
+}
+
+nav#menu-overflow ul li.more {
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  display: none;
+  float: right;
+}
+
+nav#menu-overflow ul li.more ul#overflow.show {
+  display: block;
+}
+
+nav#menu-overflow ul li a,
+nav#menu-overflow ul li span,
+nav#menu-overflow ul li.more span.btnmore {
+  display: block;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  padding: 0 1em;
+  cursor: pointer;
+  transition-duration: .3s;
+  height: 45px;
+  line-height: 45px;
+}
+
+nav#menu-overflow ul li a.selected {
+  color: #0275d8;
+  background: rgba(166, 211, 230, 0.4);
+}
+
+nav#menu-overflow ul li a:hover,
+nav#menu-overflow ul li span:hover {
+  background: #2191c0;
+  color: #fff;
+}
+
+nav#menu-overflow ul li a.active {
+  background: #2191c0;
+  color: #fff;
+}
+
+nav#menu-overflow ul li.more #overflow {
+  display: none;
+  width: 180px;
+  position: absolute;
+  text-align: left;
+  transition-duration: .2s;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+nav#menu-overflow ul li.more #overflow li {
+  float: none;
+  width: 100%;
+}
+
+nav#menu-overflow ul li.more #overflow li a {
+  background: #fff;
+  white-space: nowrap;
+  padding: 0 15px;
+  height: 35px;
+  line-height: 35px;
+}
+
+nav#menu-overflow ul li.more #overflow li a:hover {
+  background: #2191c0;
+}
+
+nav#menu-overflow ul li.more span.btnmore {
+  background: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cg%3e%3cpath style='fill:%23333333' d='M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e") no-repeat center center;
+  height: 100%;
+}
+
+@media (min-width: 1110px) {
+  nav#menu-overflow ul li {
+    /* float: left; */
+    width: 20%;
+  }
+}
+
+@media (max-width: 1079px) {
+  nav#menu-overflow ul li {
+    width: 15%;
+  }
+}
+
+@media (max-width: 885px) {
+  nav#menu-overflow ul li {
+    width: 15%;
+  }
+}
+
+@media (max-width: 668px) {
+  nav#menu-overflow ul li {
+    width: 15%;
+  }
+}
+
+@media (max-width: 545px) {
+  nav#menu-overflow ul li {
+    width: 25%;
   }
 }

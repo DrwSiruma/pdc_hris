@@ -16,7 +16,7 @@ unset($_SESSION['success']);
 unset($_SESSION['success']);
 // Get the current script name
 $current_page = basename($_SERVER['PHP_SELF']);
-$accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
+$employee_pages = ['admin.add.employee.php'];
 
 ?>
 
@@ -57,7 +57,7 @@ $accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin.dashboard.php">Home</a>
+                            <a class="nav-link <?php echo ($current_page == 'admin.dashboard.php') ? 'active' : ''; ?>" aria-current="page" href="admin.dashboard.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,25 +90,54 @@ $accounts_page = ['admin.add.user.php', 'admin.accounts.php'];
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle <?php echo (in_array($current_page, $employee_pages)) ? 'active' : ''; ?>" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Employee
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <li><a class="dropdown-item <?php echo ($current_page == 'admin.add.employee.php') ? 'active' : ''; ?>" href="admin.add.employee.php">Add Employee</a></li>
+                                <li><a class="dropdown-item" href="#">Employees List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                About
+                                Leave
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="#">Company</a></li>
-                                <li><a class="dropdown-item" href="#">Team</a></li>
-                                <li><a class="dropdown-item" href="#">Careers</a></li>
+                                <li><a class="dropdown-item" href="#">Assign Leave</a></li>
+                                <li><a class="dropdown-item" href="#">Leave Approver Status</a></li>
+                                <li><a class="dropdown-item" href="#">Leave History</a></li>
+                                <li><a class="dropdown-item" href="#">Fixed Leave tag as Off or Holiday</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                OT
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="#">Assign OT</a></li>
+                                <li><a class="dropdown-item" href="#">OT History</a></li>
+                                <li><a class="dropdown-item" href="#">OT Approver Status</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reports
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="#">Time and Attendance</a></li>
+                                <li><a class="dropdown-item" href="#">Employee Work Schedule</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle account" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Account
+                                <i class="fas fa-user-circle"></i>&nbsp;Admin
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown3">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-gear"></i>&nbsp;Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../../includes/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a></li>
                             </ul>
                         </li>
                     </ul>
